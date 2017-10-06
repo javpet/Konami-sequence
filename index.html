@@ -7,17 +7,17 @@
 </head>
 <body>
 <script>
-    const pressed = [];
-    const secretCode = "peter";
-    window.addEventListener("keyup", (e) => {
-            console.log(e.key);
-            pressed.push(e.key);
-            pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
-            if(pressed.join("").includes(secretCode)) {
-                console.log("DING SING");
-                cornify_add();
-            }
-        })
+const pressed = [];
+const secretCode = "peter";
+window.addEventListener("keyup", e => {
+	console.log(e.key);
+	pressed.push(e.key);
+	pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length); //it's -secretCode.length because we want to start the search from the end from the user's input
+	if (pressed.join("").includes(secretCode)) {
+		console.log("DING SING");
+		cornify_add();
+	}
+});
 </script>
 </body>
 </html>
